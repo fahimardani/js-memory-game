@@ -104,6 +104,10 @@ article {
     border-radius: 1rem;
     position: absolute;
     visibility: hidden;
+    width: 300px;
+    height: 200px;
+    inset: 50%;
+    translate: -50% -50%;
 
     button {
         position: absolute;
