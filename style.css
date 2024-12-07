@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: gold;
+}
+
+main {
+    position: relative;
+    display: grid;
+    place-items: center;
+    gap: 30px;
+    background: silver;
+    padding: 20px 40px;
+    border-radius: 1rem;
+    border: 2px dashed;
+    pointer-event: none;
+
+    h2 {
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+    }
+    .reset {
+        padding: 1rem;
+        background: #242424;
+        color: #fff;
+        border-radius: .5rem;
+        font-size: 1rem;
+        letter-spacing: .1rem;
+        cursor: pointer;
+        transition: .1s;
+
+        &:focus, &:hover {
+            color: #242424;
+            background: #fff;
+        }
+        &:active {
+            scale: .8;
+        }
+    }
+    .game {
+        width: 440px;
+        height: 440px;
+        transform-style: preserve-3d;
+        perspective: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: .4rem;
+    }
+    .item {
+        position: relative;
+        width: 100px;
+        aspect-ratio: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        font-size: 2rem;
+        background: lightgray;
+        border-radius: 1rem;
+        border: 2px solid;
+        transition: .2s;
+        transform: rotateY(180deg);
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: lightgray;
+            border-radius: 1rem;
+            transition: .2s;
+            transform: rotateY(0deg);
+            backface-visibility: hidden;
+        }
+    }
+    .boxOpen {
+        transform: rotateY(0deg);
+    }
+    .boxOpen::after,
+    .boxMatch::after {
+        transform: rotateY(180deg);
+    }
+}
+
+article {
+    display: grid;
+    place-items: center;
+    background: #eee;
+    padding: 2rem 4rem;
+    border: 5px double;
+    border-radius: 1rem;
+    position: absolute;
+    visibility: hidden;
+
+    button {
+        position: absolute;
+        border: none;
+        right: 1rem;
+        top: 1rem;
+        width: 30px;
+        height: 30px;
+
+        &:active {
+            scale: .5;
+        }
+        &:hover svg {
+            fill: silver;
+        }
+    }
+    h2 {
+        border-bottom: 2px solid silver;
+    }
+    p {
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+
+figure {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+  
+    figcaption a {
+      color: #525252;
+      text-decoration: none;
+      margin-left: .5rem;
+      font-size: 1.2rem;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+      &:active {
+        font-size: 1rem;
+      }
+    }
+  }
